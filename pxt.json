@@ -5,10 +5,8 @@
         "core": "*"
     },
     "files": [
-        "main.ts",
         "README.md",
-        "Parallel-Sounds.ts",
-        "demo.ts"
+        "Parallel-Sounds.ts"
     ],
     "testFiles": [
         "test.ts"
