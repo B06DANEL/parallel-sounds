@@ -16,9 +16,9 @@ namespace psounds {
     //% blockId=playmultitone
     //% block="play multitone with notes $notes for $duration ms with $envelope"
     //% type.defl=envelope_type.envelope
-    export function play_multitone(notes: number[], duration: number, type: envelope_type) {
+    export function play_multitone(notes: number[], duration: number, envelope: any) {
         let Envelope: number[]
-        switch (type) {
+        switch (envelope) {
             case envelope_type.piano: Envelope = [0, 500, 0]; break
             case envelope_type.violin: Envelope = [500, 500, 12]; break
             case envelope_type.guitar: Envelope = [0, 500, 12]; break
