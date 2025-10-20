@@ -1,6 +1,6 @@
 //% color=300 weight=100 icon="\uf001" block="Parallel Sounds"
 namespace psounds {
-    export enum envelope_type {
+    export enum envelope {
         //% block="piano"
         piano = 0,
         //% block="violin"
@@ -16,14 +16,14 @@ namespace psounds {
     //% blockId=playmultitone
     //% block="play multitone with notes $notes for $duration ms with $envelope"
     //% type.defl=envelope_type.envelope
-    export function play_multitone(notes: number[], duration: number, envelope: any) {
+    export function play_multitone(notes: number[], duration: number, envelope: psounds.envelope) {
         let Envelope: number[]
         switch (envelope) {
-            case envelope_type.piano: Envelope = [0, 500, 0]; break
-            case envelope_type.violin: Envelope = [500, 500, 12]; break
-            case envelope_type.guitar: Envelope = [0, 500, 12]; break
-            case envelope_type.reverse_piano: Envelope = [500, 0, 0]; break
-            case envelope_type.no_envelope: Envelope = [0, 0, 0]; break
+            case psounds.envelope.piano: Envelope = [0, 500, 0]; break
+            case psounds.envelope.violin: Envelope = [500, 500, 12]; break
+            case psounds.envelope.guitar: Envelope = [0, 500, 12]; break
+            case psounds.envelope.reverse_piano: Envelope = [500, 0, 0]; break
+            case psounds.envelope.no_envelope: Envelope = [0, 0, 0]; break
             default: Envelope = [0, 0, 0]
         }
 
