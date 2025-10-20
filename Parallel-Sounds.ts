@@ -14,9 +14,9 @@ namespace psounds {
     }
 
     //% blockId=playmultitone
-    //% block="play multitone with notes $Notes for $Duration ms with $type"
-    //% type.defl=EnvelopeType.envelope
-    export function play_multitone(Notes: number[], Duration: number, type: envelope_type) {
+    //% block="play multitone with notes $notes for $duration ms with $envelope"
+    //% type.defl=envelopetype.envelope
+    export function play_multitone(notes: number[], duration: number, type: envelope_type) {
         let Envelope: number[]
         switch (type) {
             case envelope_type.piano: Envelope = [0, 500, 0]; break
@@ -34,20 +34,20 @@ namespace psounds {
         let tremolo = Envelope[2]
         let durationinplaying = 0
 
-        if (Notes.length < 4) {
-            while (durationinplaying < Duration-0.02) {
+        if (notes.length < 4) {
+            while (durationinplaying < duration-0.02) {
                 durationinplaying = input.runningTime() - v
-                for (let value of Notes) {
-                    music.setVolume(volume * Math.min(Math.min(durationinplaying / attack, (Duration - durationinplaying) / release), 1))
+                for (let value of notes) {
+                    music.setVolume(volume * Math.min(Math.min(durationinplaying / attack, (duration - durationinplaying) / release), 1))
                     music.ringTone(value + Math.sin(input.runningTime() / 20) * tremolo)
                     basic.pause(Math.max(1000 / value, 5))
                 }
             }
         } else {
-            while (durationinplaying < Duration-0.02) {
+            while (durationinplaying < duration-0.02) {
                 durationinplaying = input.runningTime() - v
-                for (let value of Notes) {
-                    music.setVolume(volume * Math.min(Math.min(durationinplaying / attack, (Duration - durationinplaying) / release), 1))
+                for (let value of notes) {
+                    music.setVolume(volume * Math.min(Math.min(durationinplaying / attack, (duration - durationinplaying) / release), 1))
                     music.ringTone(value + Math.sin(input.runningTime() / 20) * tremolo)
                     basic.pause(1000 / value)
                 }
