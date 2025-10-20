@@ -1,4 +1,4 @@
-# Parallel Sounds
+# Parallel Sounds (beta)
 An simple micro:bit extension that allows "playing" multiple notes at the same time; aslo features a simple sound envelope. Works better on hardware than on simulator.
 # How to use
 There is an single block: "play multitone". There are 3 parameters:
