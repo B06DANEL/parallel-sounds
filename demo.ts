@@ -1,4 +1,4 @@
-if (true) { //"false" so it doesn't run
+if (false) { //"false" so it doesn't run
     music.setVolume(127)
     for (let index = 0; index <= 7; index++) {
         psounds.play_multitone([
